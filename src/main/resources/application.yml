@@ -1,0 +1,16 @@
+micronaut:
+  application:
+    name: mnOktaExample
+  security:
+    authentication: idtoken
+    oauth2:
+      clients:
+        okta:
+          client-secret: '${OAUTH_CLIENT_SECRET}'
+          client-id: '${OAUTH_CLIENT_ID}'
+          openid:
+            issuer: '${OIDC_ISSUER_DOMAIN}/oauth2/${OIDC_ISSUER_AUTHSERVERID}'
+    endpoints:
+      logout:
+        get-allowed: true
+
